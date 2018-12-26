@@ -18,12 +18,17 @@
     "url": "https://github.com/momoapi/node/issues"
   },
   "homepage": "https://github.com/momoapi/node#readme",
-  "dependencies": {},
+  "dependencies": {
+    "request-promise": "^4.2.2"
+  },
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
+    "@types/request-promise": "^4.1.42",
+    "@types/sinon": "^7.0.2",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
+    "sinon": "^7.2.2",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
   }
