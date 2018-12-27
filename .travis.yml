@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - 'node'
+  - '10'
+  - '6'
+
+matrix:
+  fast_finish: true
+
+install:
+- npm install
+
+script:
+- npm test

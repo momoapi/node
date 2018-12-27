@@ -10,7 +10,7 @@ const credentialsStub = {
 };
 
 const configStub = <Config>{
-  BASE_URL: 'https://momo.co.ug/',
+  BASE_URL: 'https://momo.co.ug',
   API_USER: 'foo',
   API_KEY: 'blahblah',
   SUBSCRIPTION_KEY: 'blahblah'
@@ -45,19 +45,19 @@ describe('#AuthService', () => {
 
     it('should pick call uri for collection transaction', async () => {
       await authService.authenticate();
-      expect(mockRequest.post.lastCall.args[0]['url']).to.equal('https://momo.co.ug//collection/token/')
+      expect(mockRequest.post.lastCall.args[0]['url']).to.equal('https://momo.co.ug/collection/token/')
     });
 
     it('should pick call uri for disbursement transaction', async () => {
       authService = new AuthService(configStub, TransactionKind.Disbursement, mockRequest);
       await authService.authenticate();
-      expect(mockRequest.post.lastCall.args[0]['url']).to.equal('https://momo.co.ug//disbursement/token/')
+      expect(mockRequest.post.lastCall.args[0]['url']).to.equal('https://momo.co.ug/disbursement/token/')
     });
 
     it('should pick call uri for remittance transaction', async () => {
       authService = new AuthService(configStub, TransactionKind.Remittance, mockRequest);
       await authService.authenticate();
-      expect(mockRequest.post.lastCall.args[0]['url']).to.equal('https://momo.co.ug//remittance/token/')
+      expect(mockRequest.post.lastCall.args[0]['url']).to.equal('https://momo.co.ug/remittance/token/')
     });
   });
 });
